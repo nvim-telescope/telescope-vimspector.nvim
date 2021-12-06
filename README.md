@@ -7,20 +7,35 @@ Integration for [vimspector](https://github.com/puremourning/vimspector) with
 
 ![Demo](./demo.gif)
 
+# Requirements
+
+* [vimspector](https://github.com/puremourning/vimspector) 
+* [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
+
 # Installation
 
 ```viml
-Plug 'puremourning/vimspector'
-
-Plug 'nvim-lua/popup.nvim'
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-vimspector.nvim'
 ```
 
+Load the extension by doing:
+
+```viml
+require("telescope").load_extension("vimspector")
+```
+
+somewhere after your require('telescope').setup() call.
+
 # Usage
 
+Fuzzy find over vimspector configurations:
+
 ```lua
--- Fuzzy find over vimspector configurations
 require('telescope').extensions.vimspector.configurations()
+```
+
+or 
+
+```
+:Telescope vimspector configurations
 ```
